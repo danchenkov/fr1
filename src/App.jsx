@@ -1,34 +1,35 @@
-import Contact from "./components/Contact";
+import Joke from "./components/Joke";
 
-function App() {
+/**
+ * EXTRA CREDIT:
+ * Some jokes are only a punchline with no setup:
+ *
+ * E.g.: ""
+ *
+ * If you don't pass in a "question" prop, how might you make it only
+ * show the punchline?
+ */
+
+export default function App() {
     return (
-        <div className="contacts">
-			<Contact
-				image="/images/whiskerson.png"
-				name="Mr. Whiskerson"
-				phone="(212) 555-1234"
-				email="mr.whiskaz@catnap.meow"
-			/>
-			<Contact
-				image="/images/fluffykins.png"
-				name="Fluffykins"
-				phone="(212) 555-2345"
-				email="fluff@me.com"
-			/>
-			<Contact
-				image="/images/felix.png"
-				name="Felix"
-				phone="(212) 555-4567"
-				email="thecat@hotmail.com"
-			/>
-			<Contact
-				image="/images/pumpkin.png"
-				name="Pumpkin"
-				phone="(0800) CAT KING"
-				email="pumpkin@scrimba.com"
-			/>
-        </div>
+        <>
+			<Joke
+				setup="I got my daughter a fridge for her birthday."
+				punchline="I can't wait to see her face light up when she opens it." />
+			<Joke
+				setup="How did the hacker escape the police?"
+				punchline="He just ransomware!" />
+			<Joke
+				setup="Why don't pirates travel on mountain roads?"
+				punchline="Scurvy." />
+			<Joke
+				setup="Why do bees stay in the hive in the winter?"
+				punchline="Swarm." />
+			<Joke
+				setup="What's the best thing about Switzerland?"
+				punchline="I don't know, but the flag is a big plus!" />
+			<Joke
+				punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally." />
+		</>
     )
 }
-
-export default App
