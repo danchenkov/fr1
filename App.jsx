@@ -1,24 +1,16 @@
 import React from "react"
 
 export default function App() {
-    const [count, setCount] = React.useState(0)
+    const [isGoingOut, setGoingOut] = new React.useState(true)
 
-    function add() {
-        setCount(prevCount => prevCount + 1)
-    }
-
-    function subtract() {
-        setCount(prevCount => prevCount > 0 ? prevCount - 1 : 0)
+    function toggleGoingOut() {
+        setGoingOut(isGoingOut => !isGoingOut)
     }
 
     return (
-        <main className="container">
-            <h1>How many times will Bob say "state" in this section?</h1>
-            <div className="counter">
-                <button className="minus" aria-label="Decrease count" onClick={subtract}>–</button>
-                <h2 className="count">{count}</h2>
-                <button className="plus" aria-label="Increase count" onClick={add}>+</button>
-            </div>
+        <main>
+            <h1 className="title">Do I feel like going out tonight?</h1>
+            <button className="value" onClick={toggleGoingOut}>{isGoingOut ? "Yes" : "No"}</button>
         </main>
     )
 }
