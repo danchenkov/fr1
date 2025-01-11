@@ -3,9 +3,7 @@ import React from "react"
 export default function App() {
     const [isGoingOut, setGoingOut] = new React.useState(true)
 
-    function toggleGoingOut() {
-        setGoingOut(isGoingOut => !isGoingOut)
-    }
+    const toggleGoingOut = () => setGoingOut(isGoingOut => !isGoingOut)
 
     return (
         <main>
