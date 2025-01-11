@@ -1,16 +1,24 @@
 import React from "react"
 
 export default function App() {
-    let [isImportant, setIsImportant] = React.useState("Yes")
+    const [count, setCount] = React.useState(0)
 
-    function handleClick() {
-        setIsImportant("No")
+    function add() {
+        setCount(prevCount => prevCount + 1)
+    }
+
+    function subtract() {
+        setCount(prevCount => prevCount > 0 ? prevCount - 1 : 0)
     }
 
     return (
-        <main>
-            <h1 className="title">Is state important to know?</h1>
-            <button className="value" onClick={handleClick}>{isImportant}</button>
+        <main className="container">
+            <h1>How many times will Bob say "state" in this section?</h1>
+            <div className="counter">
+                <button className="minus" aria-label="Decrease count" onClick={subtract}>–</button>
+                <h2 className="count">{count}</h2>
+                <button className="plus" aria-label="Increase count" onClick={add}>+</button>
+            </div>
         </main>
     )
 }
