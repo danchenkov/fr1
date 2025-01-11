@@ -1,14 +1,24 @@
 import React from "react"
 
 export default function App() {
-    const [isGoingOut, setGoingOut] = new React.useState(true)
+    const [myFavoriteThings, setMyFavoriteThings] = new React.useState([])
+    const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁",
+    "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+    const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
-    const toggleGoingOut = () => setGoingOut(isGoingOut => !isGoingOut)
+    function addFavoriteThing() {
+      setMyFavoriteThings((prevFavThings) => [
+        ...prevFavThings,
+        allFavoriteThings[prevFavThings.length]
+      ])
+    }
 
     return (
-        <main>
-            <h1 className="title">Do I feel like going out tonight?</h1>
-            <button className="value" onClick={toggleGoingOut}>{isGoingOut ? "Yes" : "No"}</button>
-        </main>
+      <main>
+        <button onClick={addFavoriteThing}>Add item</button>
+        <section aria-live="polite">
+          {thingsElements}
+        </section>
+      </main>
     )
-}
+  }
