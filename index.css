@@ -3,45 +3,68 @@
 }
 
 body {
-    padding: 20px;
-    font-size: 1.3rem;
-    color: white;
-    background-color: #70B85D;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background-color: #FAFAF8;
+}
+
+header {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    justify-content: center;
+
+    height: 80px;
+
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+}
+
+header > img {
+    width: 50px;
+}
+
+header > h1 {
+    font-weight: 400;
 }
 
 main {
+    padding: 30px 30px 10px;
+}
+
+.add-ingredient-form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    height: 38px;
 }
 
-button {
-    cursor: pointer;
+.add-ingredient-form > input {
+    flex-grow: 1;
 
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-    padding: 1rem;
+    min-width: 150px;
+    max-width: 400px;
+    padding: 9px 13px;
 
-    font-family: Karla, sans-serif;
-    font-size: 24px;
-    color: white;
-
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 50px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
 }
 
-button:hover {
-    color: #2C5E2E;
-    background-color: #FFFEF1;
+.add-ingredient-form > button {
+    width: 150px;
+
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #FAFAF8;
+
+    background-color: #141413;
+    border: none;
+    border-radius: 6px;
 }
 
-button:focus {
-    outline: 0;
-}
-
-p {
-    margin-block: 10px;
-    font-size: 2rem;
+.add-ingredient-form > button::before {
+    content: "+";
+    margin-right: 5px;
 }
